@@ -1,0 +1,124 @@
+\documentclass [xcolor=svgnames, t] {beamer} 
+
+\ifdefined\hyperref 
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs, comment} 
+\usepackage[absolute, overlay]{textpos} 
+\useoutertheme{infolines} 
+\setbeamercolor{title in head/foot}{bg=internationalorange}
+\setbeamercolor{author in head/foot}{bg=dodgerblue}
+\usepackage{csquotes}
+\usepackage[style=verbose-ibid,backend=bibtex]{biblatex}
+\bibliography{bibfile}
+\usepackage{amsmath}
+\usepackage[makeroom]{cancel}
+\usepackage{multicol}
+\usepackage{nameref}
+\usepackage{textpos}
+
+\usetheme{Madrid}
+\definecolor{myuniversity}{RGB}{0, 60, 113}
+\definecolor{internationalorange}{RGB}{231, 93,  42}
+ 	\definecolor{dodgerblue}{RGB}{0, 119,202}
+\usecolortheme[named=myuniversity]{structure}
+\usepackage{tikz}
+
+
+\title[GAN and SVM to identify candidates to RG]{One-class SVM to identify candidates to Reference Genes based on the augment of RNA-seq data with Generative Adversarial Networks}
+
+\author[Edwin J. Rueda]{\textbf{Edwin J. Rueda}\inst{1} \hspace{1pt} Rommel Ramos\inst{1} \\ Edian F. Franco\inst{1} \hspace{1pt} Orlando Belo\inst{2} \hspace{1pt} Jefferson Morais\inst{1}}
+
+\institute[UFPA]{
+\normalsize
+\inst{1} Federal University of Pará, Belém, Brazil\\[1pt]
+\inst{2} University of Minho, Braga, Portugal\\[1pt]
+\vspace{22pt}
+The International Conference on Computational Science and its Aplications (ICCSA) 2020}
+%\titlegraphic{\includegraphics[height=2cm]{figures/logo_ufpa.eps}
+
+
+\begin{document}
+\begin{frame}
+ \titlepage   
+\end{frame}
+
+%################################################
+%---------------- SUMMARY -----------------
+%################################################
+\begin{frame}{Summary}
+\vspace{1cm}
+\begin{center}
+   \begin{itemize}
+     \item Introduction
+     \vspace{.5cm}
+     \item Proposed Method
+     \vspace{.5cm}
+     \item Experiments and Results
+     \vspace{.5cm}
+     \item Conclusions and Future Works
+ \end{itemize} 
+\end{center}
+ 
+\end{frame}
+
+%################################################
+%---------------- INTRODUCTION -----------------
+%################################################
+\input{chapters/introduction.tex}
+
+%################################################
+%---------------- PROPOSED METHOD ---------------
+%################################################
+\input{chapters/proposed_method.tex}
+
+%################################################
+%------------ EXPERIMENTS AND RESULTS -----------
+%################################################
+\input{chapters/results}
+
+\begin{frame}{Governing equations (Mean flow)\autocite{Lecture3}}
+  
+ \textit{\textbf{RANS} equations for incompressible flow}:\\
+  \textbf{Continuity equation}
+  
+     \begin{equation}
+      \frac{\partial \overline{u_{i}}}{\partial x_{i}}=0
+  \end{equation} 
+  
+ 
+  
+  
+  \textbf{Momentum equations }
+  \begin{equation}
+      \frac{\partial \overline{u_{i}} }{\partial t} + \overline{u_{j}} \frac{\partial \overline{u_{i}} }{\partial x_{j}} = -\frac{1}{\rho}\frac{\partial \overline{P}}{\partial x_{i}}+\nu\frac{\partial ^2\overline{u_{i}}}{\partial x_{j}\partial x_{j}}-\frac{\partial \overline{u_{i}'u_{j}'}}{\partial x_{j}}+\overline{g_{i}}
+  \end{equation}
+  
+   \textbf{Scaler equation }
+  \begin{equation}
+     \frac{\partial \overline{\phi}}{\partial t}+\overline{u_{i}}\frac{\partial \overline{\phi}}{\partial x_{i}}=\frac{\partial}{\partial x_{i}}(D\frac{\partial \overline{\phi}}{\partial x_{i}})-\frac{\partial (\overline{{u_{i}^{'}\phi^{'}}})}{\partial x_{i}}
+  \end{equation}
+  
+  
+\end{frame}
+
+
+%################################################
+%---------------- THANK YOU ---------------
+%################################################
+\begin{frame}
+\author{}
+\institute{
+	\fontsize{34pt}{34pt}\selectfont
+	\textcolor{blue!50!black}{\bf Thank you!}\\[12pt]
+	}
+\date{
+	\normalsize
+	Edwin J. Rueda (edwin.rojas@icen.ufpa.br)\\[1pt]
+	Federal University of Pará (UFPA)\\[1pt]
+	Belém, Pará, Brazil\\
+	}
+\titlepage
+\end{frame}
+
+
+\end{document}
